@@ -1,0 +1,35 @@
+{
+  "Env": {},
+  "Git": {
+    "URI": "https://github.com/bacpack-system/test-packages.git",
+    "Revision": "not_real_version_tag"
+  },
+  "Build": {
+    "CMake": {
+      "Defines": {
+        "USE_PACKAGE_1": "ON",
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    }
+  },
+  "Package": {
+    "Name": "test_package_1_25",
+    "VersionTag": "v1.0.0",
+    "PlatformString": {
+      "Mode": "auto"
+    },
+    "IsLibrary": true,
+    "IsDevLib": true,
+    "IsDebug": true
+  },
+  "DockerMatrix": {
+    "ImageNames": [
+      "fleet-os-2",
+      "debian13",
+      "ubuntu1804-aarch64",
+      "ubuntu2404",
+      "fedora40",
+      "fedora41"
+    ]
+  }
+}
