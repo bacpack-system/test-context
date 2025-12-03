@@ -1,0 +1,29 @@
+{
+  "Env": {},
+  "Git": {
+    "URI": "https://github.com/bacpack-system/test-packages.git",
+    "Revision": "BAF-1202/test-context"
+  },
+  "Build": {
+    "CMake": {
+      "Defines": {
+        "USE_PACKAGE_A": "ON",
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    }
+  },
+  "Package": {
+    "Name": "test-package-a-22",
+    "VersionTag": "v1.0.0",
+    "PlatformString": {
+      "Mode": "auto"
+    },
+    "IsLibrary": true,
+    "IsDevLib": true,
+    "IsDebug": true
+  },
+  "DockerMatrix": {
+    "ImageNames": []
+  }
+}
+
