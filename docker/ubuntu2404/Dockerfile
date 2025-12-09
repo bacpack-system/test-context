@@ -8,7 +8,7 @@ RUN apt-get update && \
       	coreutils lsb-release build-essential  openssh-server git libssl-dev pkg-config wget patchelf meson ninja-build && \
     rm -rf /var/lib/apt/lists/*
 
-RUN wget "https://github.com/Kitware/CMake/releases/download/v3.30.3/cmake-3.30.3-linux-x86_64.sh" -O cmake.sh && \
+RUN wget "https://github.com/Kitware/CMake/releases/download/v3.31.10/cmake-3.31.10-linux-x86_64.sh" -O cmake.sh && \
     chmod +x cmake.sh && \
     ./cmake.sh --skip-license --prefix=/usr/local && \
     rm ./cmake.sh 
@@ -20,10 +20,10 @@ RUN apt-get purge -y \
 RUN git clone https://github.com/cmakelib/cmakelib.git /cmakelib
 RUN echo "export CMLIB_DIR=/cmakelib" >> /root/.bashrc
 
-# Install Fleet Protocol's CMCONF system
-COPY --from=package-context config/CMCONF_FLEET_PROTOCOLConfig.cmake /etc
+# Install Test CMCONF system
+COPY --from=package-context config/CMCONF_TEST_SYSTEMConfig.cmake /etc
 ENV CMLIB_DIR=/cmakelib
-RUN cmake -DCMCONF_INSTALL_AS_SYMLINK=ON -P /etc/CMCONF_FLEET_PROTOCOLConfig.cmake
+RUN cmake -DCMCONF_INSTALL_AS_SYMLINK=ON -P /etc/CMCONF_TEST_SYSTEMConfig.cmake
 
 RUN sed -ri 's/#?PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN mkdir -p /run/sshd

@@ -10,7 +10,7 @@ RUN apt-get update && \
 
 RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 60 --slave /usr/bin/g++ g++ /usr/bin/g++-8
 
-RUN wget "https://github.com/Kitware/CMake/releases/download/v3.28.0/cmake-3.28.0-linux-x86_64.sh" -O cmake.sh && \
+RUN wget "https://github.com/Kitware/CMake/releases/download/v3.31.10/cmake-3.31.10-linux-x86_64.sh" -O cmake.sh && \
     chmod +x cmake.sh && \
     ./cmake.sh --skip-license --prefix=/usr/local && \
     rm ./cmake.sh
