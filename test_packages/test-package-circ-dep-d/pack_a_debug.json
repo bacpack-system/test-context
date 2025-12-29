@@ -5,7 +5,7 @@
   ],
   "Git": {
     "URI": "https://github.com/bacpack-system/test-packages.git",
-    "Revision": "BAF-1202/test-context"
+    "Revision": "master"
   },
   "Build": {
     "CMake": {
