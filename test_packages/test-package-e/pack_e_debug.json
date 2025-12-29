@@ -1,0 +1,39 @@
+{
+  "Env": {},
+  "DependsOn": [
+    "test-package-a",
+    "test-package-b",
+    "test-package-d"
+  ],
+  "Git": {
+    "URI": "https://github.com/bacpack-system/test-packages.git",
+    "Revision": "master"
+  },
+  "Build": {
+    "CMake": {
+      "Defines": {
+        "USE_PACKAGE_E": "ON",
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    }
+  },
+  "Package": {
+    "Name": "test-package-e",
+    "VersionTag": "v1.0.0",
+    "PlatformString": {
+      "Mode": "auto"
+    },
+    "IsLibrary": true,
+    "IsDevLib": true,
+    "IsDebug": true
+  },
+  "DockerMatrix": {
+    "ImageNames": [
+      "debian13",
+      "ubuntu1804-aarch64",
+      "ubuntu2404",
+      "fedora43"
+    ]
+  }
+}
+
